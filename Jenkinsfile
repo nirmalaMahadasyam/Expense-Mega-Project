@@ -1,15 +1,15 @@
-@Library('Shared') _
+//@Library('Shared') _
 pipeline {
-    agent {label 'Node'}
+    agent {label 'AGENT-1'}
     
     // environment{
     //     SONAR_HOME = tool "Sonar"
     // }
     
-    // parameters {
+     parameters {
     //     string(name: 'FRONTEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
     //     string(name: 'BACKEND_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
-    // }
+     }
     
     stages {
         // stage("Validate Parameters") {
@@ -32,7 +32,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/LondheShubham153/Wanderlust-Mega-Project.git","main")
+                    code_checkout("https://github.com/nirmalaMahadasyam/Expense-Mega-Project.git","main")
                 }
             }
         }
@@ -116,13 +116,14 @@ pipeline {
 //             }
 //         }
 //     }
-//     post{
+     post{
 //         success{
 //             archiveArtifacts artifacts: '*.xml', followSymlinks: false
 //             build job: "Wanderlust-CD", parameters: [
 //                 string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
 //                 string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
 //             ]
-//         }
-//     }
- }
+    // }
+        }
+  }
+}

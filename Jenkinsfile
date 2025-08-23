@@ -29,13 +29,15 @@ pipeline {
             }
         }
         
-        stage('Git: Code Checkout') {
+        stage("Git: Code Checkout") {
             steps {
                 script{
                     code_checkout(git:"https://github.com/nirmalaMahadasyam/Expense-Mega-Project.git",branch:"main")
                 }
             }
         }
+    }
+}   
         
 //         stage("Trivy: Filesystem scan"){
 //             steps{
@@ -125,5 +127,5 @@ pipeline {
 //             ]
      //}
       //  }
-  }
-}
+ // }
+//}
